@@ -9,7 +9,6 @@
    <img src="https://img.shields.io/github/stars/Blank-c/Blank-Grabber">
    <img src="https://img.shields.io/github/forks/Blank-c/Blank-Grabber">
    <br>
-   <img src="https://img.shields.io/github/last-commit/Blank-c/Blank-Grabber">
    <img src="https://img.shields.io/github/license/Blank-c/Blank-Grabber">
    <br>
 </p>
