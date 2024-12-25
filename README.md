@@ -22,7 +22,6 @@
 - [Stub Settings](#stub-settings)
 - [Requirements](#requirements)
 - [How to Build?](#how-to-build)
-- [Support the Project](#support-the-project)
 
 ## Download
 
